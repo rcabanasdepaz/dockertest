@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-MAINTAINER Rafael Cabañas <rcabanas@decsai.ugr.es>
+MAINTAINER Juan Jesús Ojeda <juanje.ojeda@ual.es>
 
 RUN apt-get update ; \
 	apt-get install -y software-properties-common

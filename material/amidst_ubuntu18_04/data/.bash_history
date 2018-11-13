@@ -167,3 +167,8 @@ ls
 cd target
 ls
 exit
+ls
+ps -ax
+ls -l
+top
+exit

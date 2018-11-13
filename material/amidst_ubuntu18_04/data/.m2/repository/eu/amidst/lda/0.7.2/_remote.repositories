@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Sep 05 10:46:28 GMT 2018
+lda-0.7.2-sources.jar>=
+lda-0.7.2-javadoc.jar>=
+lda-0.7.2.jar>=
+lda-0.7.2.pom>=

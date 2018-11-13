@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Sep 05 10:46:07 GMT 2018
+core-dynamic-0.7.2-javadoc.jar>=
+core-dynamic-0.7.2.jar>=
+core-dynamic-0.7.2-sources.jar>=
+core-dynamic-0.7.2.pom>=

@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Sep 05 10:47:51 GMT 2018
+tutorials-0.7.2-sources.jar>=
+tutorials-0.7.2.pom>=
+tutorials-0.7.2-javadoc.jar>=
+tutorials-0.7.2.jar>=

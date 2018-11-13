@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Sep 05 10:48:15 GMT 2018
+moalink-0.7.2-javadoc.jar>=
+moalink-0.7.2.jar>=
+moalink-0.7.2-sources.jar>=
+moalink-0.7.2.pom>=

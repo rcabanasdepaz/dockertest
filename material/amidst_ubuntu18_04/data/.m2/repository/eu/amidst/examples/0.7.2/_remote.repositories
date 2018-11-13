@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Sep 05 10:47:46 GMT 2018
+examples-0.7.2-javadoc.jar>=
+examples-0.7.2.pom>=
+examples-0.7.2-sources.jar>=
+examples-0.7.2.jar>=

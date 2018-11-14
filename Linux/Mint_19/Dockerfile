@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM linuxmintd/mint19-amd64
 
 MAINTAINER Juan Jesús Ojeda <juanje.ojeda@ual.es>
 
@@ -22,7 +22,7 @@ RUN git clone -b develop https://github.com/PGM-Lab/InferPy.git
 # Install the requirements
 RUN cd InferPy \
 	pip install -r requirements.txt \
-	pip install .
+	pip install -U pytest
 
 
 

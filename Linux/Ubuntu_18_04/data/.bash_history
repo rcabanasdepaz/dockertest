@@ -14,3 +14,10 @@ exit
 git --version
 ls
 exit
+exit
+exit
+docker ps --filter "name=sad_brahmagupta"
+exit
+cls
+ls
+exit

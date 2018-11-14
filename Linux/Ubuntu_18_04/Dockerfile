@@ -25,7 +25,7 @@ RUN git clone -b develop https://github.com/PGM-Lab/InferPy.git
 # Install the requirements
 RUN cd InferPy \
 	pip install -r requirements.txt \
-	pip install .
+	pip install -U pytest 
 
 
 

@@ -21,3 +21,8 @@ exit
 cls
 ls
 exit
+exit
+ls
+cd /usr/bin
+ls
+exit

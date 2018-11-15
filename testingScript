@@ -7,10 +7,14 @@ cd Ubuntu_18_04
 
 # Run the Ubuntu 18:04 container
 path=`pwd`
-docker run --rm -ti -p 8888:8888 -v $path/data:/root inferpy:ubuntu18_04 /bin/bash
+docker run -d --name ubuntu18_04 --rm -ti -p 8888:8888 -v $path/data:/root inferpy:ubuntu18_04 /bin/bash
 
-# Move to the folder where are the tests
-cd InferPy
+# Make a directory to store the results output
+mkdir log
 
-# Execute the tests
-python -m pytest tests
+# Execute command in the container in order to launch the tests
+docker exec -i ubuntu18_04 sh -c "cd InferPy; python3 -m pytest tests" > log/test_ubuntu18_04.txt
+
+
+# Copy the output file on the local machine
+#docker cp ubuntu18_04:/home/root/InferPy/test_ubuntu18_04.txt log

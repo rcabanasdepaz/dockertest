@@ -23,9 +23,9 @@ RUN apt-get install -y git-core
 RUN git clone -b develop https://github.com/PGM-Lab/InferPy.git
 
 # Install the requirements
-RUN cd InferPy \
-	pip install -r requirements.txt \
-	pip install -U pytest 
+RUN cd InferPy ; \
+	pip3 install -r requirements.txt ; \
+	pip3 install -U pytest 
 
 
 

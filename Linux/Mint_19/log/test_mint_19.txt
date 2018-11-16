@@ -5168,4 +5168,4 @@ tests/test_shapes.py::Shapes_Test::test
     return np.fromstring(tensor.tensor_content, dtype=dtype).reshape(shape)
 
 -- Docs: https://docs.pytest.org/en/latest/warnings.html
-================== 8 passed, 2566 warnings in 129.01 seconds ===================
+================== 8 passed, 2566 warnings in 132.27 seconds ===================

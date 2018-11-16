@@ -19,11 +19,21 @@ mkdir log
 # Execute command in the container in order to launch the tests
 docker exec -i ubuntu18_04 sh -c "cd InferPy; python3 -m pytest tests" > log/test_ubuntu18_04.txt
 
+# Save results in a text file
+echo "Ubuntu 18.04 results:" > ../test_results.txt
+
+grep -o "Error" log/test_ubuntu18_04.txt | wc -l
+
+if [ $? = 0 ]
+then
+  echo "Test Passed" >> ../test_results.txt
+else
+  echo "Test Failed" >> ../test_results.txt
+fi
+
 # Stop container
 docker stop ubuntu18_04
 
-# Delete container
-#docker rm -f ubuntu18_04
 
 # For Mint 19
 
@@ -35,11 +45,6 @@ cd Mint_19
 # Build image Mint 19
 docker build -t "inferpy:mint_19" .
 
-# TODO
-#pwd
-
-#docker ps -a
-
 # Run the Mint 19 container
 path=`pwd`
 docker run -d --name mint_19 --rm -ti -p 8888:8888 -v $path/data:/root inferpy:mint_19 /bin/bash
@@ -50,8 +55,17 @@ mkdir log
 # Execute command in the container in order to launch the tests
 docker exec -i mint_19 sh -c "cd InferPy; python3 -m pytest tests" > log/test_mint_19.txt
 
+# Save results in a text file
+echo "Mint 19 results:" >> ../test_results.txt
+
+grep -o "Error" log/test_mint_19.txt | wc -l
+
+if [ $? = 0 ]
+then
+  echo "Test Passed" >> ../test_results.txt
+else
+  echo "Test Failed" >> ../test_results.txt
+fi
+
 # Stop container
 docker stop mint_19
-
-# Delete container
-#docker rm -f mint_19

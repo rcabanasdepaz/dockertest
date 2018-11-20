@@ -1,0 +1,8 @@
+elementary 0.4 results:
+Test Passed
+CentOS 7 results:
+Test Passed
+Ubuntu 18.04 results:
+Test Passed
+Mint 19 results:
+Test Passed

@@ -14,7 +14,8 @@ RUN apt-get update ; \
 RUN apt-get install -y python3-pip
 
 # Install setuptools module
-RUN apt-get install python3-setuptools
+RUN apt-get install -y python3-setuptools
+RUN apt-get install -y python3-dev
 
 # Set current working directory
 WORKDIR /home/root/
@@ -23,11 +24,13 @@ WORKDIR /home/root/
 RUN apt-get install -y git-core
 
 # Clone the branch develop from the repository	
-RUN git clone -b develop https://github.com/PGM-Lab/InferPy.git
+RUN git clone https://github.com/PGM-Lab/InferPy.git
+
+RUN pip3 install --upgrade pip
+
 
 # Install the requirements and the pytest module
 RUN cd InferPy ; \
-	pip3 install -r requirements.txt ; \
 	pip3 install --upgrade setuptools ; \
 	pip3 install -U pytest
 

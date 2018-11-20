@@ -15,3 +15,4 @@ ls
 cd ..
 ls
 exit
+exit

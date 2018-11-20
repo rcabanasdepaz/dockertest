@@ -20,23 +20,22 @@ docker run -d --name elementary --rm -ti -p 8888:8888 -v $path/data:/root inferp
 mkdir log
 
 # Execute command in the container in order to launch the tests
-docker exec -i elementary sh -c "cd InferPy; git checkout develop; python3 -m pytest tests" > log/test_elementary_0_4.txt
+docker exec -i elementary sh -c "cd InferPy; git checkout req_upper; pip3 install -r requirements.txt; python3 -m pytest tests" > log/test_elementary_0_4.txt
 
 # Save results in a text file
-echo "elementary 0.4 results:" > ../test_results.txt
+echo "elementary 0.4 results:" > ../test_results_upper.txt
 
 grep -io "Error" log/test_elementary_0_4.txt | wc -l
 
 if [ $? = 0 ]
 then
-  echo "Test Passed" >> ../test_results.txt
+  echo "Test Passed" >> ../test_results_upper.txt
 else
-  echo "Test Failed" >> ../test_results.txt
+  echo "Test Failed" >> ../test_results_upper.txt
 fi
 
 # Stop container
 docker stop elementary
-
 
 
 ####################
@@ -44,7 +43,7 @@ docker stop elementary
 #####################
 
 # Move to the Ubuntu folder
-cd Linux
+cd ..
 
 cd centOS_7
 
@@ -58,18 +57,18 @@ docker run -d --name centos_7 --rm -ti -p 8888:8888 -v $path/data:/root inferpy:
 mkdir log
 
 # Execute command in the container in order to launch the tests
-docker exec -i centos_7 sh -c "cd InferPy; git checkout develop; python3 -m pytest tests" > log/test_centos_7.txt
+docker exec -i centos_7 sh -c "cd InferPy; git checkout req_upper; pip3 install -r requirements.txt; python3 -m pytest tests" > log/test_centos_7.txt
 
 # Save results in a text file
-echo "CentOS 7 results:" > ../test_results.txt
+echo "CentOS 7 results:" >> ../test_results_upper.txt
 
 grep -io "Error" log/test_centos_7.txt | wc -l
 
 if [ $? = 0 ]
 then
-  echo "Test Passed" >> ../test_results.txt
+  echo "Test Passed" >> ../test_results_upper.txt
 else
-  echo "Test Failed" >> ../test_results.txt
+  echo "Test Failed" >> ../test_results_upper.txt
 fi
 
 # Stop container
@@ -82,7 +81,7 @@ docker stop centos_7
 #####################
 
 # Move to the Ubuntu folder
-cd Linux
+cd ..
 
 cd Ubuntu_18_04
 
@@ -96,18 +95,18 @@ docker run -d --name ubuntu18_04 --rm -ti -p 8888:8888 -v $path/data:/root infer
 mkdir log
 
 # Execute command in the container in order to launch the tests
-docker exec -i ubuntu18_04 sh -c "cd InferPy;  python3 -m pytest tests" > log/test_ubuntu18_04.txt
+docker exec -i ubuntu18_04 sh -c "cd InferPy;  pip3 install -r requirements.txt; python3 -m pytest tests" > log/test_ubuntu18_04.txt
 
 # Save results in a text file
-echo "Ubuntu 18.04 results:" > ../test_results.txt
+echo "Ubuntu 18.04 results:" >> ../test_results_upper.txt
 
 grep -io "Error" log/test_ubuntu18_04.txt | wc -l
 
 if [ $? = 0 ]
 then
-  echo "Test Passed" >> ../test_results.txt
+  echo "Test Passed" >> ../test_results_upper.txt
 else
-  echo "Test Failed" >> ../test_results.txt
+  echo "Test Failed" >> ../test_results_upper.txt
 fi
 
 # Stop container
@@ -126,25 +125,25 @@ cd Mint_19
 docker build -t "inferpy:mint_19" .
 
 # Run the Mint 19 container
-path=`pwd`
+path=`pwd`;
 docker run -d --name mint_19 --rm -ti -p 8888:8888 -v $path/data:/root inferpy:mint_19 /bin/bash
 
 # Make a directory to store the results output
 mkdir log
 
 # Execute command in the container in order to launch the tests
-docker exec -i mint_19 sh -c "cd InferPy; git checkout develop; python3 -m pytest tests" > log/test_mint_19.txt
+docker exec -i mint_19 sh -c "cd InferPy; git checkout req_upper; pip3 install -r requirements.txt; python3 -m pytest tests" > log/test_mint_19.txt
 
 # Save results in a text file
-echo "Mint 19 results:" >> ../test_results.txt
+echo "Mint 19 results:" >> ../test_results_upper.txt
 
 grep -io "Error" log/test_mint_19.txt | wc -l
 
 if [ $? = 0 ]
 then
-  echo "Test Passed" >> ../test_results.txt
+  echo "Test Passed" >> ../test_results_upper.txt
 else
-  echo "Test Failed" >> ../test_results.txt
+  echo "Test Failed" >> ../test_results_upper.txt
 fi
 
 # Stop container
